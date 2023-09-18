@@ -15,7 +15,6 @@
 }
 
 #typing-text {
-    font-size: 48px;
 	font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
 }
 
@@ -1350,6 +1349,9 @@ input, select, textarea {
 			body, input, textarea, select {
 				font-size: 15pt;
 			}
+			#typing-text {
+				font-size: 36pt;
+			}
 
 		}
 
@@ -1357,6 +1359,9 @@ input, select, textarea {
 
 			body, input, textarea, select {
 				font-size: 14pt;
+			}
+			#typing-text {
+				font-size: 36pt;
 			}
 
 		}
@@ -1366,6 +1371,9 @@ input, select, textarea {
 			body, input, textarea, select {
 				font-size: 12pt;
 			}
+			#typing-text {
+				font-size: 24pt;
+			}
 
 		}
 
@@ -1373,6 +1381,9 @@ input, select, textarea {
 
 			body, input, textarea, select {
 				font-size: 11pt;
+			}
+			#typing-text {
+				font-size: 16pt;
 			}
 
 		}
