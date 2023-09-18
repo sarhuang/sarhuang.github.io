@@ -4,10 +4,10 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const textElement = document.getElementById('typing-text');
-    const textToType = "hello, world.";
+    const textToType = ".hello, world.";
+    const typeDelay = 1200; // Delay before typing again
 
     function typeText(index) {
         if (index < textToType.length) {
@@ -15,16 +15,40 @@ document.addEventListener('DOMContentLoaded', function() {
             index++;
             setTimeout(function() {
                 typeText(index);
-            }, 100); // Adjust the timeout to control typing speed
+            }, 150); // Adjust the typing speed
         } else {
             setTimeout(function() {
-                textElement.innerHTML = ''; // Reset the text content
-                typeText(0); // Start typing again
-            }, 2000); // Adjust the timeout before resetting and typing again
+                deleteSentence(); 
+            }, 3000); 
         }
     }
+
+    function deleteSentence() {
+        let sentence = textElement.innerHTML;
+        let index = sentence.length - 1;
+
+        function deleteCharacter() {
+            if (index > 0) {
+				if(textElement.innerHTML == ".h"){
+					textElement.innerHTML = sentence.slice(0, index);
+					setTimeout(function() {
+                        typeText(1); // Start typing again
+                    }, typeDelay);
+				}
+				else{
+					textElement.innerHTML = sentence.slice(0, index);
+					index--;
+					setTimeout(deleteCharacter, 150); // Adjust the deletion speed
+				}
+			}
+        }
+
+        deleteCharacter();
+    }
+
     typeText(0);
 });
+
 
 
 
