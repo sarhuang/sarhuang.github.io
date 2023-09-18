@@ -17,7 +17,8 @@
 }
 
 #typing-text {
-    font-size: 24px;
+    font-size: 48px;
+	font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
 }
 
 
