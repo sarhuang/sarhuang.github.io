@@ -4,6 +4,30 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const textElement = document.getElementById('typing-text');
+    const textToType = "hello, world.";
+
+    function typeText(index) {
+        if (index < textToType.length) {
+            textElement.innerHTML += textToType.charAt(index);
+            index++;
+            setTimeout(function() {
+                typeText(index);
+            }, 100); // Adjust the timeout to control typing speed
+        } else {
+            setTimeout(function() {
+                textElement.innerHTML = ''; // Reset the text content
+                typeText(0); // Start typing again
+            }, 2000); // Adjust the timeout before resetting and typing again
+        }
+    }
+    typeText(0);
+});
+
+
+
 (function($) {
 
 	var $window = $(window),
