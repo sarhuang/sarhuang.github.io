@@ -2030,7 +2030,7 @@ input, select, textarea {
 					-webkit-flex-shrink: 0;
 					-ms-flex-shrink: 0;
 					flex-shrink: 0;
-					width: 17em;
+					width: 20em;
 					height: 100%;
 				}
 
@@ -2066,22 +2066,13 @@ input, select, textarea {
 					#main > .panel.intro .pic .arrow {
 						display: block;
 						position: absolute;
-						right: 0;
-						top: 50%;
-						margin-top: -1.375em;
-						width: 2.75em;
-						height: 2.75em;
-						background: #000;
-						background: rgba(0, 0, 0, 0.75);
+						width: 1.50em;
+						height: 1.50em;
 						color: #ffffff;
 						text-align: center;
-						line-height: 2.75em;
+						line-height: 0.50em;
 						font-size: 1.5em;
 						z-index: 1;
-						-moz-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-						-webkit-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-						-ms-transition: width .15s ease-in-out, padding-right .15s ease-in-out;
-						transition: width .15s ease-in-out, padding-right .15s ease-in-out;
 					}
 
 						#main > .panel.intro .pic .arrow:before {
@@ -2288,7 +2279,7 @@ input, select, textarea {
 		transition: background-color 0.6s ease;
 		}
 
-		.active, .dot:hover {
+		.dot:hover {
 		background-color: #717171;
 		}
 
