@@ -284,8 +284,7 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
 }
 
-
-function cc_talk(){
-	let audio = document.getElementById("ccAudio"); 
+function comp_talk(){
+	let audio = document.getElementById("compAudio"); 
 	audio.play();
 }

@@ -2240,10 +2240,17 @@ input, select, textarea {
 
 
 		#companion {
+			cursor: pointer;
 			position: fixed;
 			top: 0;
     		right: 0;
 			max-width: 30%;
 			width: 100%;
+		}
+
+		@media screen and (max-width: 500px) {
+			#companion{
+				display: none;
+			}
 		}
 		
