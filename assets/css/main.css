@@ -2239,9 +2239,11 @@ input, select, textarea {
 		}
 
 
-
 		#companion {
 			position: fixed;
-    		top: 20px;
-			right: 0;
+			top: 0;
+    		right: 0;
+			max-width: 30%;
+			width: 100%;
 		}
+		
