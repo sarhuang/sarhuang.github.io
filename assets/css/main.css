@@ -2253,4 +2253,14 @@ input, select, textarea {
 				display: none;
 			}
 		}
-		
+
+		.profile-container {
+			display: flex;
+			align-items: center;
+			margin-right: 20px;
+		}
+
+		#profile{
+			width: 30%;
+    		margin-right: 20px;
+		}
