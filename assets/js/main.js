@@ -284,7 +284,38 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
 }
 
-function comp_talk(){
-	let audio = document.getElementById("compAudio"); 
-	audio.play();
+var currentAudio;
+function comp_talk() {
+    var ccImage = document.getElementById("cc");
+    if (ccImage.src.includes("cc.png")) {
+        ccImage.src = "assets/files/companion/cc_tremble.gif";
+	}
+
+    let randnum = Math.floor(Math.random() * 4);
+    var audio;
+    switch (randnum) {
+        case 0:
+            audio = document.getElementById("welcome_audio");
+            break;
+        case 1:
+            audio = document.getElementById("hello_world_audio");
+            break;
+        case 2:
+            audio = document.getElementById("louie_audio");
+            break;
+        case 3:
+            audio = document.getElementById("sarah_stop_audio");
+            break;
+    }
+    if(currentAudio) {
+        currentAudio.pause();
+		currentAudio.currentTime = 0;
+    }
+
+	audio.addEventListener('ended', function () {
+        ccImage.src = "assets/files/companion/cc.png";
+    });
+
+    audio.play();
+    currentAudio = audio;
 }
