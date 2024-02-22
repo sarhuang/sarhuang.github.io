@@ -140,7 +140,9 @@
 						decided to replace the button with a slider. Moving the slider to its left and right extremes will 
 						place the row, so the intended motion is for the player to move the knob back and forth horizontally. 
 						This action requires much more timing and physicality than a simple button click.
-						<br>
+					</p>
+					<br>
+					<p>
 						Rather than Stacker being a single-player game, we altered it to become a two-player game. 
 						The game is designed to increase the speed of the blocks the higher the tower becomes, which would 
 						result in us making a randomizer or arbitrarily increasing the speed by some factor. What if we allow a 
@@ -149,6 +151,7 @@
 						input allows quick speed changes to further challenge the player. We used the Daisenko Blade 200 Pen Light as a fun controller, 
 						but any light source will work. 
 					</p>
+					<br>
 					<h3>Game Construction</h3>
 					<p>
 						After lots of testing, we figured out the pin layout of our LED 8x8 matrix:
@@ -159,7 +162,7 @@
 						</ul>
 						Using two long breadboards, we were able to have enough space for our LED 8x8 matrix, 
 						the slide potentiometer, and the photoresistor. Both the potentiometer and the photoresistor 
-						voltage divider circuit are being powered in parallel using the arduino's 3V output. 
+						voltage divider circuit are being powered in parallel using the Arduino's 3V output. 
 					</p>
 					<img src="assets/files/images/stacker_vs_board.jpg" class="image centered" width="40%" alt="">
 					<p>
@@ -167,6 +170,7 @@
 						and the photoresistor from each other. The presence of the light source can be distracting to 
 						the player on top of the block speed change.
 					</p>
+					<br>
 					<h3>Game Code</h3>
 					<p>
 						In the game loop, this is a summary of the actions taking place:
@@ -187,6 +191,7 @@
 						to grid blocks that have a game block on them. 
 					</p>
 					<h3>Video Demo</h3>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/osojH2Au4Iw?si=kHFMHn0yaoyPpp14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					<h3>Challenges</h3>
 					<p>
 						An overall hurdle was determining if our bug was a hardware or software issue. Faulty code can be 
