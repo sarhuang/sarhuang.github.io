@@ -99,9 +99,113 @@
 
 				<article id="stacker-vs" class="panel">
 					<header>
-						<h2>Stacker VS - <a href="https://github.com/sarhuang/sarhuang.github.io" class="fa fa-link"><span>GitHub</span></a></h2>
+						<h2>Stacker VS - <a href="https://github.com/sarhuang/cosc594/tree/main/mp1" class="fa fa-link"><span>GitHub</span></a></h2>
 					</header>
 					<img src="assets/files/images/project_thumbnails/stacker_vs_edit.png" class="image centered" width="40%" alt="">
+
+					<h3>Purpose</h3>
+					<p>
+						The goal is to build an interactive game with the LED 8x8 matrix. Not only does the game need to be fun, 
+						but it should also use an inventive input device. For our game, we decided to recreate Stacker, an arcade 
+						game that challenges the player to build a tower with blocks row by row without missing. Instead of a button, 
+						the inventive inputs will be a slider that places the block and a photoresistor that dictates the speed of the block.
+					</p>
+					<h3>Materials</h3>
+					<ul>
+						<li>Long breadboards (x2)</li>
+						<li>Arduino Nano 33 IoT</li>	
+						<li>USB type A cable </li>	
+						<li>LED 8x8 matrix</li>	
+						<li>Wires</li>	
+						<li>Slide potentiometer</li>	
+						<li>470 Ω resistors (x9)</li>	
+						<li>Photoresistor</li>	
+						<li>Daisenko Blade 200 Pen Light (or any light source)</li>	
+					</ul>
+					<h3>How does Stacker play?</h3>
+					<p>
+						The objective of Stacker is to line up the rows of blocks to make a tower and 
+						reach the top of the screen. Rows can include one to four blocks, depending on 
+						the progression of the tower. The row moves back and forth, so players must use 
+						timing and precision to place their rows. The row must be connected to the tower to 
+						advance to the next row. If the player places their row and the blocks do not touch the 
+						previous rows they laid down, they lose and must start over from the beginning. The player 
+						wins once they successfully place their last row, and the tower reaches the top of the screen.
+					</p>
+					<h3>Inventive Inputs</h3>
+					<p>
+						We noticed the appearance of the LED 8x8 matrix and decided that it's not too graphically different 
+						from Stacker. We can still depict the tower, blocks, and white space by lighting up specific dots. 
+						Stacker is always played with a button to test a player's timing and precision. To be inventive, we 
+						decided to replace the button with a slider. Moving the slider to its left and right extremes will 
+						place the row, so the intended motion is for the player to move the knob back and forth horizontally. 
+						This action requires much more timing and physicality than a simple button click.
+						<br>
+						Rather than Stacker being a single-player game, we altered it to become a two-player game. 
+						The game is designed to increase the speed of the blocks the higher the tower becomes, which would 
+						result in us making a randomizer or arbitrarily increasing the speed by some factor. What if we allow a 
+						second player to influence the speed instead? Using a photoresistor and a light source, we made the brightness 
+						the determining factor of speed. The more light the photoresistor detects, the faster the blocks move. This interactive 
+						input allows quick speed changes to further challenge the player. We used the Daisenko Blade 200 Pen Light as a fun controller, 
+						but any light source will work. 
+					</p>
+					<h3>Game Construction</h3>
+					<p>
+						After lots of testing, we figured out the pin layout of our LED 8x8 matrix:
+						<ul>
+							<li>Column pins (left to right): 22, 19, 16, 13, 3, 6, 9, 12</li>
+							<li>Red row pins (bottom to top): 24, 21, 18, 15, 1, 4, 7, 10</li>
+							<li>Green row pins (bottom to top): 23 20 17 14 2 5 8 11</li>
+						</ul>
+						Using two long breadboards, we were able to have enough space for our LED 8x8 matrix, 
+						the slide potentiometer, and the photoresistor. Both the potentiometer and the photoresistor 
+						voltage divider circuit are being powered in parallel using the arduino's 3V output. 
+					</p>
+					<img src="assets/files/images/stacker_vs_board.jpg" class="image centered" width="40%" alt="">
+					<p>
+						If we had more time, we would make an enclosure for our system and try to separate the slider 
+						and the photoresistor from each other. The presence of the light source can be distracting to 
+						the player on top of the block speed change.
+					</p>
+					<h3>Game Code</h3>
+					<p>
+						In the game loop, this is a summary of the actions taking place:
+						<ul>
+							<li>The photosensor input is read and changes the speed the blocks display</li>
+							<li>Increment or decrement the block position based on its direction</li>
+							<li>Change the position in our byte array that manages the position of the LEDs</li>
+							<li>Read the slider input and note the position of the blocks
+								<ul>
+								<li>If the current row of blocks and previous row intersect but player one hasn’t reached the top row, the dot array saves the previous block display and increments to the next row</li>
+								<li>If they do not intersect, player one enters the loss state, the dot array is set to the losing design (“L”), and updates the matrix</li>
+								<li>If the player reaches the top row, they enter the win state, the dot array is set to the winning design (“W”), and updates the matrix</li>
+								</ul>
+							</li>
+						</ul>
+						The LEDs update due to the displayGame() function that uses a scanning technique to display whatever 
+						the pattern currently is. It sets the active row low and the columns high for LEDs that correspond 
+						to grid blocks that have a game block on them. 
+					</p>
+					<h3>Video Demo</h3>
+					<h3>Challenges</h3>
+					<p>
+						An overall hurdle was determining if our bug was a hardware or software issue. Faulty code can be 
+						easy to diagnose, but it was frustrating to have the code not work due to a loose wire or bent pin. 
+						One surprising example was a button. The original Stacker game is played with a button, so we assumed 
+						that implementing one would be a great way to test our game logic. However, we struggled with debouncing 
+						and reading the button inputs. Clicking the button once might read a lot more than one or clicking it multiple 
+						times would not register at all. A major source of the issue was a pin on the button being bent when we moved 
+						our circuitry to a bigger breadboard. In the end, we decided to just switch to the slide potentiometer and it worked just fine.
+					</p>
+					<h3>Conclusion</h3>
+					<p>
+						At the end of this process we are left with an old game that can be played in an entirely new format 
+						for a completely new experience.From a design perspective, adapting a game that is traditionally for 
+						one player and making it work for two is an interesting challenge that turned out to be a lot of fun 
+						to plan around. By giving each player a range of input it opens up the possibility space in how the 
+						game can be played for either side. Getting the technology to work synchronously proved to also be 
+						quite the challenge but one that has greatly improved our technical ability when working with microcontroller-based devices. 
+					</p>
 				</article>
 
 				<article id="work-portfolio" class="panel">
