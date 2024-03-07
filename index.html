@@ -102,7 +102,7 @@
 
 				<article id="cheerio" class="panel">
 					<header>
-						<h2>Cheerio Input - mgP2</h2>
+						<h2>Cheerio Slider (mgp2) - <a href="https://github.com/sarhuang/cosc594/tree/main/mgp2" class="fa fa-link"><span>GitHub</span></a></h2>
 					</header>
 					<img src="assets/files/images/project_thumbnails/cheerio_250x195.png" class="image centered" width="40%" alt="">
 					<h3>Purpose</h3>
@@ -176,13 +176,87 @@
 						due to its hole, so maybe a player wins or scores a point when they've flicked enough Cheerios for the top one to be touching the sensor.
 					</p>
 					<img src="assets/files/images/mgp2/cheerio_temperature.jpg" class="image centered" width="50%" alt="">
-
+					<h3>Cheerio Slider - Prototype #2</h3>
+					<p>
+						We decided to go with the conductive thread idea because we already had the materials. Time played a big factor in our decision.
+						Following our prototype, we tested the idea with four conductive tape inputs and cardboard as our surface.
+					</p>
+					<img src="assets/files/images/mgp2/cheerio_prototype1.jpg" class="image centered" width="50%" alt="">
+					<p>
+						The Cheerio proved to be a good blocker of the conductive tape! We had to adjust the tape positions, so the thread
+						would touch the other tapes but not the one blocked by the Cheerio. 
+					</p>
+					<h3>Cheerio Slider - Prototype #3</h3>
+					<p>
+						We noticed that craftmanship was a factor on the 
+						rubric, so we upgraded our cardboard surface to wood. We found a piece long enough to have
+						two rows of 5 copper tape inputs, so we can express the numerical values 0-8 given the available pins on our Arduino.
+						Another issue that arose with the new wooden surface was the thread not laying completely flat even when it was
+						taut. To address this, we used black foam to elevate the conductive tape, so the thread would guaranteed touch 
+						the conductive surfaces.
+					</p>
+					<img src="assets/files/images/mgp2/cheerio_prototype2.jpg" class="image centered" width="50%" alt="">
+					<h3>Cheerio Slider - Prototype #4</h3>
+					<p>
+						Due to time constraints, we didn't fully investigate the conductive properties of the conductive thread.
+						We originally had one long string for all 8 sensors, but the slightest change to one sensor would affect
+						all of the readings. We decided to then a string and Cheerio per two sensors. This didn't help the sensitivity issues
+						and complicated our code since we needed to find the difference in threshold between the baseline and current reading.  
+					</p>
+					<img src="assets/files/images/mgp2/cheerio_prototype3.jpg" class="image centered" width="50%" alt="">
+					<h3>Cheerio Slider - Final Product</h3>
+					<h4>Materials</h4>
+					<ul>
+						<li>Regular-shaped Cheerios (x8)</li>
+						<li>Conductive thread (x8 pieces)</li>
+						<li>Copper tape</li> 
+						<li>Black foam</li>	
+						<li>Regular tape</li>	
+						<li>Wooden surface</li>	
+						<li>Breadboard</li>
+						<li>Arduino Nano 33 IoT</li>	
+						<li>USB type A cable </li>	
+						<li>Wires</li>	
+						<li>Dial potentiometer</li>	
+						<li>1M Ω resistors (x8)</li>	
+					</ul>
+					<p>
+						In the end, we had to have a string for each sensor, so the sensor could clearly tell if a Cheerio was on it (low reading)
+						and when it was off (high reading) without having any other sensors interferring its reading. We also learned that
+						the best Cheerios to use were the circular ones because they were thicker than the heart-shaped ones
+						and could elevate the string high enough to where it wouldn't make contact with the copper tape.
+						We included directions and illustrations as well to elevate the product's appearance.
+						If we had more time and could figure out the Arduino Nano IoT 33 hardware, we would've liked it
+						to act as a keyboard number pad and act as input rather than just outputing to the Serial monitor.
+					</p>
+					<p>
+						<b>Here's how it works:</b>
+						<ol>
+							<li>At it's current position, the number output is 0 when all of the Cheerios are resting on the copper tape pads.</li>
+							<li>Slide a Cheerio off one of the pads.</li>
+							<li>The number output will change to the number you just moved.</li>
+							<li>Slide the Cheerio back onto the pad to reset it back to 0.</li>
+						</ol>
+					</p>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/osojH2Au4Iw?si=kHFMHn0yaoyPpp14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<img src="assets/files/images/mgp2/cheerio_final.jpg" class="image centered" width="50%" alt="">
+					<h3>Conclusion</h3>
+					<p>
+						We successfully demonstrated iterative prototyping.
+						We started with many ideas and narrowed it down to one.
+						We started with many implementations of that one idea and narrowed it down to one.
+						When the implementation wasn't perfect, we continued to improve until it was functional.
+						From our documentation, it's fascinating to see how we started with a Cheerio keyboard that would look like
+						a normal keyboard to Cheerios on threads. 
+						It's sad to deviate from the original lofty idea, but we came out with something new
+						and courageous. 
+					</p>
 
 				</article>
 
 				<article id="stacker-vs" class="panel">
 					<header>
-						<h2>Stacker VS - <a href="https://github.com/sarhuang/cosc594/tree/main/mp1" class="fa fa-link"><span>GitHub</span></a></h2>
+						<h2>Stacker VS (mgp1) - <a href="https://github.com/sarhuang/cosc594/tree/main/mp1" class="fa fa-link"><span>GitHub</span></a></h2>
 					</header>
 					<img src="assets/files/images/project_thumbnails/stacker_vs_edit.png" class="image centered" width="40%" alt="">
 
