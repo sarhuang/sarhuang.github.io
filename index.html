@@ -114,6 +114,53 @@
 						create a physical-based interaction that is digitized, analyzed, and then used to
 						control/actuate (provide haptics or move things) in the real world. 
 					</p>
+					<h3>Idea Brainstorming</h3>
+					<p>
+						The IMU has a gyroscope to measure rotation and accelerometer to detect motion. 
+						With those concepts, we came up with 20 ideas. We ultimately dwindled it down to
+						3 interaction concepts and created low-fidelity prototypes.
+					</p>
+					<img src="assets/files/images/mgp3/mgp3_ideas.png" class="image centered" width="60%" alt="">
+					<h3>Parallel Prototyping - Wrist Cup, Wrist Light</h3>
+					<p>
+						To take advantage of IMU's gyroscope, we could attach the electronics to a human wrist.
+						We thought of attaching a cup or small flashlight to the electronics glove.
+						For the cup, the gyroscope and motors could self-adjust the cup so that it is 
+						always standing tall and will not spill over. It will move with the user's wrist.
+						As for the flashlight, maybe it could adjust up, down, left, or right depending on
+						small movements from the wrist. 
+					</p>
+					<img src="assets/files/images/mgp3/wrist_cup_sketch.png" class="image centered" width="60%" alt="">
+					<img src="assets/files/images/mgp3/wrist_cup_proto.jpg" class="image centered" width="60%" alt="">
+					<h3>Parallel Prototyping - RC Wheel</h3>
+					<p>
+						Using a Nintendo Ring Fit Adventure wheel controller, we could attach the 
+						circuitry to the wheel and read steering information. RC cars typically have
+						a controller with a joystick, but we could repurpose a RC car to be steered
+						with a makeshift steering wheel.
+					</p>
+					<video width="320" height="240" controls>
+						<source src="assets/files/images/mgp3/wheel.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					  </video>
+					<h3>Parallel Prototyping - Car Chase Collision</h3>
+					<p>
+						The car chase idea was inspired by the car toys that you wind up by
+						rolling it backwards and then releasing it so that it moves a distance
+						without requiring any batteries. Small children and cats could have
+						fun with this type of toy. 
+						The purpose of this video is to demonstrate the functionality of "hitting" 
+						the Arduino in order to drive a motor. When the IMU detects an impulse in 
+						a specific direction above a certain threshold, it revs the motor up before 
+						ramping it back down. The purpose of building this circuit was to test 
+						the feasibility of creating a car that drives off in a certain direction 
+						when it is hit by something. 
+					</p>
+					<img src="assets/files/images/mgp3/car_chase_sketch.png" class="image centered" width="60%" alt="">
+					<video width="320" height="240" controls>
+						<source src="assets/files/images/mgp3/car_wheel.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					  </video>
 				</article>
 
 				<article id="cheerio" class="panel">
